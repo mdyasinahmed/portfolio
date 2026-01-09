@@ -1,391 +1,256 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Md Yasin Ahmed | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fa-solid fa-circle-nodes"></i> Yasin Ahmed
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fa-solid fa-code-branch me-2"></i>YASIN AHMED
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars-staggered text-white"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-lg-center">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="mailto:mdyasinmahii@gmail.com" class="btn btn-primary-custom btn-sm rounded-pill px-4">Hire Me</a>
+                    </li>
                 </ul>
-                <a href="mailto:mdyasinmahii@gmail.com" class="btn my_fill_button rounded-pill d-none d-lg-inline ms-3">
-                    <i class="fa-solid fa-envelope"></i> Email Me
-                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero animate-on-scroll" id="home">
-        <div class="container hero-content">
-            <h1>Md Yasin Ahmed Mahi</h1>
-            <div class="hero-role">Data Scientist &amp; Full-Stack Developer</div>
-            <p>
-                I specialize in building intelligent, scalable solutions at the intersection of <strong>Data
-                    Science</strong>, <strong>Machine Learning</strong>, and <strong>Software Engineering</strong>.<br>
-                Passionate about research, innovation, and delivering real-world impact through technology.
-            </p>
-            <a href="#projects" class="btn my_fill_button rounded-pill btn-md px-4 mt-3">View My Work</a>
-            <div class="hero-social mt-4">
-                <a href="https://www.linkedin.com/in/mdyasiin/" target="_blank" title="LinkedIn"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/mdyasinahmed" target="_blank" title="GitHub"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="mailto:mdyasinmahii@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 animate-fade-in">
+                    <span class="text-primary-accent fw-semibold tracking-wider text-uppercase d-block mb-2">Portfolio 2025</span>
+                    <h1 class="display-3 fw-bold mb-3">Md Yasin Ahmed <span class="text-outline">Mahi</span></h1>
+                    <h2 class="h3 fw-light text-secondary-text mb-4">Data Scientist & Full-Stack Developer</h2>
+                    <p class="lead text-secondary-text mb-5 pe-lg-5">
+                        Building intelligent, scalable solutions at the intersection of <strong>Data Science</strong> and <strong>Modern Web Technologies</strong>. Focus on research, innovation, and real-world impact.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#projects" class="btn btn-primary-custom px-5 py-3">View Projects</a>
+                        <div class="d-flex align-items-center gap-4 ms-md-3 mt-3 mt-md-0">
+                            <a href="https://linkedin.com/in/mdyasiin/" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/mdyasinahmed" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="animate-on-scroll">
+    <!-- About Section -->
+    <section id="about" class="section-padding">
         <div class="container">
-            <div class="section_header text-center">
-                <h2>About Me</h2>
-                <i class="fa-solid fa-sort-down fa-2x"></i>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 animate-on-scroll">
+                    <h2 class="section-title mb-4">About Me</h2>
+                    <p class="text-secondary-text mb-4">
+                        I am a Computer Science & Engineering student driven by the challenge of solving complex problems. I specialize in developing machine learning models and high-performance web applications.
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="skill-tag"><i class="fa-solid fa-check-circle me-2"></i>Machine Learning</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="skill-tag"><i class="fa-solid fa-check-circle me-2"></i>Data Analysis</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="skill-tag"><i class="fa-solid fa-check-circle me-2"></i>Full-Stack Dev</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="skill-tag"><i class="fa-solid fa-check-circle me-2"></i>AI Research</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="info-card">
+                                <span class="badge text-bg-primary mb-2">Education</span>
+                                <h5 class="mb-1">BSc in Computer Science</h5>
+                                <p class="small text-secondary-text mb-0">Metropolitan University | 2022 - Present</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="info-card">
+                                <span class="badge text-bg-success mb-2">Experience</span>
+                                <h5 class="mb-1">Data Science Intern</h5>
+                                <p class="small text-secondary-text mb-0">XYZ Analytics | 2025 - Present</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-card mx-auto animate-on-scroll" style="max-width:700px;">
-                <p>
-                    I’m a Computer Science & Engineering student passionate about building intelligent systems and
-                    solving real-world problems through technology. My focus areas include <strong>Data
-                        Science</strong>, <strong>Machine Learning</strong>, <strong>Artificial Intelligence</strong>,
-                    and full-stack development.
-                </p>
-                <ul>
-                    <li>Exploring data-driven research opportunities</li>
-                    <li>Lifelong learner & productivity enthusiast</li>
-                    <li>Active in academic and personal tech projects</li>
-                </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-dark-secondary">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="text-secondary-text">Selected academic and professional projects.</p>
             </div>
+            <div class="row g-4 mb-5 animate-on-scroll">
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-body">
+                            <span class="text-primary-accent small fw-bold">WEB APP</span>
+                            <h4 class="mt-2">LifeDrops</h4>
+                            <p class="text-secondary-text small">Blood donation platform connecting donors and recipients via PHP & MySQL.</p>
+                            <a href="https://lifedrops.great-site.net/" target="_blank" class="btn-text">Case Study <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-body">
+                            <span class="text-primary-accent small fw-bold">DATABASE</span>
+                            <h4 class="mt-2">RecordBook</h4>
+                            <p class="text-secondary-text small">Library management CRUD system built for high-performance indexing.</p>
+                            <a href="https://recordbook.great-site.net/" target="_blank" class="btn-text">Case Study <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-body">
+                            <span class="text-primary-accent small fw-bold">SYSTEM</span>
+                            <h4 class="mt-2">Dynamic TO-DO</h4>
+                            <p class="text-secondary-text small">High-efficiency console management application developed in C++ STL.</p>
+                            <a href="#" class="btn-text">Case Study <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Grid Web Links -->
+            <h5 class="text-white-50 text-center mb-4">Web Development Portfolio</h5>
+            <div class="bento-grid animate-on-scroll">
+                <a href="https://mdyasinahmed.github.io/web.Connect2Globe/" class="bento-item">
+                    <span>Connect2Globe</span>
+                    <small>Consulting Agency</small>
+                </a>
+                <a href="https://justice-landing-page0.netlify.app" class="bento-item">
+                    <span>Justice</span>
+                    <small>Legal Service</small>
+                </a>
+                <a href="https://mdyasinahmed.github.io/web.Bitcoin" class="bento-item">
+                    <span>CryptoTech</span>
+                    <small>Fintech Landing</small>
+                </a>
+                <a href="https://mdyasinahmed.github.io/web.enforex-ielts" class="bento-item">
+                    <span>EnforexIELTS</span>
+                    <small>Training Platform</small>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section-padding">
+        <div class="container animate-on-scroll text-center">
+            <div class="publication-box">
+                <h2 class="section-title">Publications</h2>
+                <div class="my-4">
+                    <i class="fa-solid fa-feather-pointed text-primary-accent fa-3x mb-3"></i>
+                    <p class="text-secondary-text lead">Currently working on research projects in Machine Learning. <br>Updates coming soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section-padding bg-dark-secondary">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Articles</h2>
+            <div class="row g-4 animate-on-scroll">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card">
+                        <small class="text-primary-accent fw-bold">LinkedIn · 2023</small>
+                        <h5 class="mt-2">Why I Chose CSE</h5>
+                        <p class="text-secondary-text small">A deep dive into the passion behind engineering.</p>
+                        <a href="https://www.linkedin.com/pulse/why-i-chose-computer-science-engineering-journey-passion-mahi-2eu2f" class="btn-text">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card">
+                        <small class="text-primary-accent fw-bold">Medium · 2023</small>
+                        <h5 class="mt-2">Productivity Hacks</h5>
+                        <p class="text-secondary-text small">How task management before sleep changes clarity.</p>
+                        <a href="#" class="btn-text">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card">
+                        <small class="text-primary-accent fw-bold">Medium · 2023</small>
+                        <h5 class="mt-2">7 Cs of Communication</h5>
+                        <p class="text-secondary-text small">Essential principles for professional interaction.</p>
+                        <a href="#" class="btn-text">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-5 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">
-                                <i class="bi bi-briefcase me-2"></i>Professional Experience
-                            </h5>
-                            <ul class="list-unstyled mb-0">
-                                <li class="mb-2">
-                                    <strong>Data Science Intern</strong><br>
-                                    <span class="text-muted">XYZ Analytics</span>
-                                    <span class="badge bg-light text-secondary ms-2">2025 - Present</span>
-                                    <br>
-                                    <small>Contributing to data-driven projects, developing predictive models, and
-                                        supporting business intelligence initiatives.</small>
-                                </li>
-                                <li>
-                                    <strong>Research Assistant</strong><br>
-                                    <span class="text-muted">Harvard University</span>
-                                    <span class="badge bg-light text-secondary ms-2">2027</span>
-                                    <br>
-                                    <small>Assisted in academic research focused on advanced machine learning
-                                        algorithms
-                                        and
-                                        data analysis.</small>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="contact-card">
+                        <h2 class="section-title text-center mb-4">Get In Touch</h2>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Message</label>
+                                <textarea class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100 py-3">Send Message</button>
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-5 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">
-                                <i class="bi bi-mortarboard me-2"></i>Education
-                            </h5>
-                            <ul class="list-unstyled mb-0">
-                                <li class="mb-2">
-                                    <strong>BSc in Computer Science & Engineering</strong><br>
-                                    <span class="text-muted">Metropolitan University</span>
-                                    <span class="badge bg-light text-secondary ms-2">2022 - Present</span>
-                                    <br>
-                                    <small>Focused on data science, artificial intelligence, and software
-                                        engineering.</small>
-                                </li>
-                                <li>
-                                    <strong>Higher Secondary Certificate (HSC)</strong><br>
-                                    <span class="text-muted">Starlight College</span>
-                                    <span class="badge bg-light text-secondary ms-2">2019 - 2021</span>
-                                    <br>
-                                    <small>Science Major</small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="animate-on-scroll">
-        <div class="container">
-            <div class="section_header text-center">
-                <h2>Projects</h2>
-                <i class="fa-solid fa-sort-down fa-2x"></i>
-            </div>
-            <p class="mb-4 text-center">
-                Selected academic, professional, and personal projects in full-stack development, data science, and
-                software engineering.
-            </p>
-            <div class="row g-4 justify-content-center">
-                <!-- Main Projects -->
-                <div class="col-12 col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">
-                                <a href="https://lifedrops.great-site.net/" target="_blank"
-                                    class="text-decoration-none fw-bold">LifeDrops</a>
-                            </h5>
-                            <p class="card-text small mb-2">
-                                Blood donation platform connecting donors and recipients. Group project for <a
-                                    href="https://github.com/mdyasinahmed/CSE-323_WebProgrammingLab" target="_blank">Web
-                                    Programming Lab</a>.
-                            </p>
-                            <div class="small text-muted"><strong>Tech:</strong> HTML, CSS, Bootstrap, PHP, MySQL</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- RecordBook -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">
-                                <a href="https://recordbook.great-site.net/" target="_blank"
-                                    class="text-decoration-none fw-bold">RecordBook</a>
-                            </h5>
-                            <p class="card-text small mb-2">
-                                Library management CRUD system for university DBMS course.
-                            </p>
-                            <div class="small text-muted"><strong>Tech:</strong> HTML, CSS, Bootstrap, PHP, MySQL</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Dynamic TO-DO List -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">
-                                <a href="https://github.com/mdyasinahmed/dynamic-todo-list-with-cpp" target="_blank"
-                                    class="text-decoration-none fw-bold">Dynamic TO-DO List</a>
-                            </h5>
-                            <p class="card-text small mb-2">
-                                Console-based CRUD To-Do List using C++.
-                            </p>
-                            <div class="small text-muted"><strong>Tech:</strong> C++, STL</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Web Projects Grid -->
-            <div class="row g-3 mt-5">
-                <h5 class="mb-3 text-center"><span class="me-2">🌐</span>Web Development Portfolio</h5>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.Connect2Globe/" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>Connect2Globe</strong><br>
-                        <span class="text-muted small">Consulting agency website</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.enforex-ielts" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>EnforexIELTS</strong><br>
-                        <span class="text-muted small">IELTS training & consulting</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.newsportal_landingpage_demo" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>Latest News</strong><br>
-                        <span class="text-muted small">News portal landing</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.ittady-gallery" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>Ittady Gallery</strong><br>
-                        <span class="text-muted small">Furniture shop landing</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.MultiKart" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>MultiKart</strong><br>
-                        <span class="text-muted small">E-commerce clone</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://justice-landing-page0.netlify.app" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>Justice</strong><br>
-                        <span class="text-muted small">Legal service landing</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.Bitcoin" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>CryptoTechnologies</strong><br>
-                        <span class="text-muted small">Crypto landing</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.agency-G3-Architects" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>G3 Architects</strong><br>
-                        <span class="text-muted small">Architect agency landing</span>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="https://mdyasinahmed.github.io/web.TuraCos" target="_blank"
-                        class="project-link d-block text-center p-2 border rounded bg-white h-100">
-                        <strong>TuraCos</strong><br>
-                        <span class="text-muted small">Digital agency website</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications -->
-    <section id="publications" class="animate-on-scroll">
-        <div class="container">
-            <div class="section_header text-center">
-                <h2>Publications</h2>
-                <i class="fa-solid fa-sort-down fa-2x"></i>
-            </div>
-            <div class="about-card mx-auto" style="max-width:700px;">
-                <p>Currently working on research projects. Looking forward to publishing soon!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog -->
-    <section id="blog" class="animate-on-scroll">
-        <div class="container">
-            <div class="section_header text-center">
-                <h2>Blog Posts</h2>
-                <i class="fa-solid fa-sort-down fa-2x"></i>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-12 col-md-6 col-lg-3 d-flex">
-                    <div class="blog-card animate-on-scroll flex-fill d-flex flex-column">
-                        <a href="https://www.linkedin.com/pulse/why-i-chose-computer-science-engineering-journey-passion-mahi-2eu2f"
-                            target="_blank" class="blog-title">Why I Chose Computer Science and Engineering</a>
-                        <div class="blog-meta"><i class="fa-regular fa-calendar"></i> LinkedIn · 2023</div>
-                        <div class="blog-desc mb-3">A personal reflection on my journey, motivations, and the opportunities
-                            that led me to pursue Computer Science and Engineering.</div>
-                        <a href="https://www.linkedin.com/pulse/why-i-chose-computer-science-engineering-journey-passion-mahi-2eu2f"
-                            target="_blank" class="btn btn-sm my_blank_button rounded-pill mt-auto">Read More</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex">
-                    <div class="blog-card animate-on-scroll flex-fill d-flex flex-column">
-                        <a href="https://medium.com/@md_yasinahmed/what-happens-if-you-dont-set-tasks-for-the-next-day-before-going-to-sleep-6b2bc875aea"
-                            target="_blank" class="blog-title">Importance of Setting Tasks Before Sleep</a>
-                        <div class="blog-meta"><i class="fa-brands fa-medium"></i> Medium · 2023</div>
-                        <div class="blog-desc mb-3">Discover how planning your next day before sleep can boost productivity
-                            and mental clarity, with actionable tips.</div>
-                        <a href="https://medium.com/@md_yasinahmed/what-happens-if-you-dont-set-tasks-for-the-next-day-before-going-to-sleep-6b2bc875aea"
-                            target="_blank" class="btn btn-sm my_blank_button rounded-pill mt-auto">Read More</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex">
-                    <div class="blog-card animate-on-scroll flex-fill d-flex flex-column">
-                        <a href="https://medium.com/@md_yasinahmed/how-to-prepare-a-well-organized-presentation-dfc332f47dff"
-                            target="_blank" class="blog-title">How to Prepare a Professional Presentation</a>
-                        <div class="blog-meta"><i class="fa-brands fa-medium"></i> Medium · 2023</div>
-                        <div class="blog-desc mb-3">A concise guide to structuring, designing, and delivering impactful
-                            presentations for academic or professional settings.</div>
-                        <a href="https://medium.com/@md_yasinahmed/how-to-prepare-a-well-organized-presentation-dfc332f47dff"
-                            target="_blank" class="btn btn-sm my_blank_button rounded-pill mt-auto">Read More</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex">
-                    <div class="blog-card animate-on-scroll flex-fill d-flex flex-column">
-                        <a href="https://medium.com/@md_yasinahmed/7-cs-of-an-effective-business-communication-in-a-nutshell-4a2779e74460"
-                            target="_blank" class="blog-title">7 Cs of Effective Communication</a>
-                        <div class="blog-meta"><i class="fa-brands fa-medium"></i> Medium · 2023</div>
-                        <div class="blog-desc mb-3">An overview of the seven key principles for clear and effective business
-                            communication, with practical examples.</div>
-                        <a href="https://medium.com/@md_yasinahmed/7-cs-of-an-effective-business-communication-in-a-nutshell-4a2779e74460"
-                            target="_blank" class="btn btn-sm my_blank_button rounded-pill mt-auto">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="animate-on-scroll">
-        <div class="container">
-            <div class="section_header text-center">
-                <h2>Get in Touch</h2>
-                <i class="fa-solid fa-sort-down fa-2x"></i>
-            </div>
-            <div class="about-card mx-auto text-center" style="max-width:700px;">
-                <p>
-                    Interested in collaborating, discussing research, or exploring new opportunities? Please fill out
-                    the form below to get in touch.
-                </p>
-                <form class="mt-4" style="max-width:500px;margin:auto;">
-                    <div class="mb-3 text-start">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="mb-3 text-start">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="you@email.com" required>
-                    </div>
-                    <div class="mb-3 text-start">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Type your message..."
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn my_fill_button rounded-pill btn-md px-4 mt-3">Send Message</button>
-                </form>
-            </div>
-            <div class="hero-social mt-4 text-center">
-                <a href="https://www.linkedin.com/in/mdyasiin/" target="_blank" title="LinkedIn"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/mdyasinahmed" target="_blank" title="GitHub"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="mailto:mdyasinmahii@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-2 text-center">
+    <footer class="py-5 text-center border-top border-secondary">
         <div class="container">
-            <p>&copy; 2025 Md Yasin Ahmed. All rights reserved.</p>
+            <p class="small text-secondary-text mb-0">&copy; 2025 Md Yasin Ahmed. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/scripts.js"></script>
 </body>
-
 </html>
