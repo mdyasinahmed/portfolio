@@ -1,47 +1,62 @@
-// Navbar scroll effect
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 40) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-
-// Scrollspy for active nav links
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
-  window.addEventListener("scroll", function () {
-    let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Navbar Scroll Effect
+    const mainNav = document.querySelector("#mainNav");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            mainNav.classList.add("scrolled");
+        } else {
+            mainNav.classList.remove("scrolled");
+        }
     });
+
+    // 2. Intersection Observer for Scroll Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                scrollObserver.unobserve(entry.target); // Animates only once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll(".animate-on-scroll").forEach(el => {
+        scrollObserver.observe(el);
+    });
+
+    // 3. Mobile Nav Auto-Close
+    const navLinks = document.querySelectorAll(".nav-link");
+    const menuToggle = document.getElementById("navbarNav");
+    const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
+    
     navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
+        link.addEventListener("click", () => {
+            if (window.innerWidth < 992) {
+                bsCollapse.hide();
+            }
+        });
     });
-  });
 
-  // Animation on scroll
-  const animatedEls = document.querySelectorAll(".animate-on-scroll");
-  const animateOnScroll = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animated");
-        observer.unobserve(entry.target);
-      }
+    // 4. Smooth Scroll Spy (Active link coloring)
+    window.addEventListener("scroll", () => {
+        let current = "";
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 100) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((li) => {
+            li.classList.remove("active");
+            if (li.getAttribute("href").includes(current)) {
+                li.classList.add("active");
+            }
+        });
     });
-  };
-  const observer = new IntersectionObserver(animateOnScroll, {
-    threshold: 0.15,
-  });
-  animatedEls.forEach((el) => {
-    observer.observe(el);
-  });
 });
