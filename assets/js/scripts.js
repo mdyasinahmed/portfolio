@@ -1,61 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Navbar Scroll Effect
-    const mainNav = document.querySelector("#mainNav");
-    window.addEventListener("scroll", () => {
+    // 1. Precise Navbar Scroll Management
+    const nav = document.querySelector('#mainNav');
+    const handleScroll = () => {
         if (window.scrollY > 50) {
-            mainNav.classList.add("scrolled");
+            nav.classList.add('scrolled');
         } else {
-            mainNav.classList.remove("scrolled");
+            nav.classList.remove('scrolled');
         }
-    });
-
-    // 2. Intersection Observer for Scroll Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
     };
+    window.addEventListener('scroll', handleScroll);
 
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                scrollObserver.unobserve(entry.target); // Animates only once
-            }
-        });
-    }, observerOptions);
+    // 2. High-Performance Intersection Observer
+    const observeElements = () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    document.querySelectorAll(".animate-on-scroll").forEach(el => {
-        scrollObserver.observe(el);
-    });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    };
+    observeElements();
 
-    // 3. Mobile Nav Auto-Close
-    const navLinks = document.querySelectorAll(".nav-link");
-    const menuToggle = document.getElementById("navbarNav");
-    const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
-    
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+    // 3. Mobile Navigation Auto-Collapse
+    const navItems = document.querySelectorAll('.nav-link, .btn');
+    const navCollapse = document.querySelector('.navbar-collapse');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
             if (window.innerWidth < 992) {
+                const bsCollapse = new bootstrap.Collapse(navCollapse);
                 bsCollapse.hide();
-            }
-        });
-    });
-
-    // 4. Smooth Scroll Spy (Active link coloring)
-    window.addEventListener("scroll", () => {
-        let current = "";
-        const sections = document.querySelectorAll("section");
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach((li) => {
-            li.classList.remove("active");
-            if (li.getAttribute("href").includes(current)) {
-                li.classList.add("active");
             }
         });
     });
