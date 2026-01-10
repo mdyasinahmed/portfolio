@@ -3,221 +3,146 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Md Yasin Ahmed | Data Scientist & Dev</title>
+    <title>Md Yasin Ahmed | Portfolio</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg py-4">
         <div class="container">
-            <a class="navbar-brand fw-800" href="#home">
-                <span class="text-primary-accent">YASIN</span> AHMED
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fa-solid fa-bars-staggered text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item ms-lg-4">
-                        <a href="#contact" class="btn btn-primary-custom rounded-pill px-4">Contact Me</a>
-                    </li>
-                </ul>
+            <a class="navbar-brand" href="#"><img src="https://i.ibb.co/L9H0YxW/logo-placeholder.png" alt="Logo" style="height: 40px;"></a>
+            <div class="ms-auto d-flex gap-4 d-none d-md-flex">
+                <a href="#about" class="nav-top-link">About</a>
+                <a href="#contact" class="nav-top-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero-section d-flex align-items-center" id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 animate-fade-in">
-                    <div class="hero-badge mb-3">Available for New Projects</div>
-                    <h1 class="hero-title mb-3">Architecting <span class="text-primary-accent">Intelligence</span> & Scalable Systems.</h1>
-                    <p class="hero-lead mb-5">
-                        I'm <span class="text-white fw-600">Md Yasin Ahmed Mahi</span>, a Data Scientist and Full-Stack Developer focused on bridging the gap between complex data research and functional engineering.
-                    </p>
-                    <div class="d-flex gap-4 align-items-center flex-wrap">
-                        <a href="#projects" class="btn btn-primary-custom px-5 py-3 fw-600">Explore Portfolio</a>
-                        <div class="hero-socials">
-                            <a href="https://linkedin.com/in/mdyasiin/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/mdyasinahmed" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <!-- Hero / Title Section -->
+    <header class="container text-center hero-section">
+        <h1 class="main-name">Md Yasin Ahmed</h1>
+        <div class="separator">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </div>
+        <p class="hero-subtitle">Hello! Glad to see you here. This is a collection of my professional projects made <br class="d-none d-md-block"> during my career as a Data Scientist & Developer.</p>
+    </header>
+
+    <!-- Project Filter Bar -->
+    <div class="container mb-5">
+        <div class="filter-wrapper">
+            <div class="filter-bar">
+                <a href="#" class="filter-link active">ALL CATEGORIES</a>
+                <a href="#" class="filter-link">DATA SCIENCE</a>
+                <a href="#" class="filter-link">FULL-STACK</a>
+                <a href="#" class="filter-link">RESEARCH</a>
+            </div>
+            <div class="filter-shadow"></div>
+        </div>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="container-fluid px-md-5">
+        <div class="row g-2">
+            <!-- Project 1 -->
+            <div class="col-6 col-md-3">
+                <div class="project-box">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800" alt="Project">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <h6>LifeDrops Platform</h6>
+                            <p>(Made in PHP, 2024)</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="col-6 col-md-3">
+                <div class="project-box">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800" alt="Project">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <h6>RecordBook DBMS</h6>
+                            <p>(MySQL Project, 2023)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Project 3 -->
+             <div class="col-6 col-md-3">
+                <div class="project-box">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e90526354c?auto=format&fit=crop&w=800" alt="Project">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <h6>Creative Analysis</h6>
+                            <p>(Python, 2024)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Project 4 -->
+             <div class="col-6 col-md-3">
+                <div class="project-box">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" alt="Project">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <h6>Security Research</h6>
+                            <p>(CyberSec, 2025)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more 4 items to fill the grid as per image -->
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-5">
+                    <div class="about-img-frame">
+                        <img src="https://via.placeholder.com/500x600" class="img-fluid grayscale" alt="Yasin Ahmed">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2 class="about-title">About Me</h2>
+                    <div class="separator-left">
+                        <div class="line"></div>
+                        <div class="dot"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="about-text mt-4">
+                        <p>I am a Data Scientist and Full-Stack Developer. Previously I studied at Metropolitan University focusing on AI and Machine Learning systems.</p>
+                        <p>Besides data science and web architecture, I am passionate about research and productivity enthusiasts.</p>
+                        <p>I have experience delivering high-quality software solutions and contributing to data-driven decision making.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 animate-on-scroll">
-                    <h2 class="section-label text-primary-accent">01. About Me</h2>
-                    <h3 class="display-6 fw-bold text-white mb-4">A student of science, a builder by nature.</h3>
-                    <p class="text-secondary-text mb-4 fs-110">
-                        Currently pursuing a BSc in Computer Science & Engineering, I am obsessed with how data can be leveraged to build predictive systems. Whether it's a machine learning model or a full-scale web application, my approach is always <strong>performance-first</strong>.
-                    </p>
-                    <div class="row g-3">
-                        <div class="col-6 col-md-4"><div class="skill-item">Machine Learning</div></div>
-                        <div class="col-6 col-md-4"><div class="skill-item">Data Science</div></div>
-                        <div class="col-6 col-md-4"><div class="skill-item">Full-Stack Dev</div></div>
-                        <div class="col-6 col-md-4"><div class="skill-item">Python / C++</div></div>
-                        <div class="col-6 col-md-4"><div class="skill-item">AI Research</div></div>
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1 animate-on-scroll">
-                    <div class="experience-box">
-                        <div class="exp-item mb-4">
-                            <span class="exp-date">2025 — PRESENT</span>
-                            <h5 class="text-white mt-1">Data Science Intern</h5>
-                            <p class="text-muted small">XYZ Analytics • Developing predictive models for business BI.</p>
-                        </div>
-                        <div class="exp-item">
-                            <span class="exp-date">2022 — PRESENT</span>
-                            <h5 class="text-white mt-1">BSc in Computer Science</h5>
-                            <p class="text-muted small">Metropolitan University • Focus on AI & Data Systems.</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer class="footer-section mt-5">
+        <div class="container text-center py-5">
+            <h5 class="fw-bold mb-4">Work With Me</h5>
+            <div class="footer-socials mb-4">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-medium-m"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-solid fa-code"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section-padding bg-darker">
-        <div class="container">
-            <div class="mb-5 animate-on-scroll">
-                <h2 class="section-label text-primary-accent">02. Selected Work</h2>
-                <h3 class="display-6 fw-bold text-white">Engineering Solutions.</h3>
-            </div>
-            
-            <div class="row g-4 animate-on-scroll">
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="text-white">LifeDrops</h5>
-                            <p class="text-secondary-text small">Full-stack blood donation platform built with PHP and MySQL, designed for rapid donor-recipient matching.</p>
-                            <div class="mt-4">
-                                <a href="https://lifedrops.great-site.net/" target="_blank" class="project-link">Live Project <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Other projects follow same structure -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="text-white">RecordBook</h5>
-                            <p class="text-secondary-text small">A high-performance library management system featuring complex relational database queries.</p>
-                            <div class="mt-4">
-                                <a href="https://recordbook.great-site.net/" target="_blank" class="project-link">Live Project <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="text-white">Dynamic TO-DO</h5>
-                            <p class="text-secondary-text small">C++ based CLI application utilizing STL for efficient task scheduling and memory management.</p>
-                            <div class="mt-4">
-                                <a href="#" target="_blank" class="project-link">View Source <i class="fa-solid fa-code ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bento Grid Links -->
-            <div class="mt-5 pt-5 animate-on-scroll">
-                <h6 class="text-white-50 mb-4 text-center">WEB PORTFOLIO DIRECTORY</h6>
-                <div class="bento-grid">
-                    <a href="https://mdyasinahmed.github.io/web.Connect2Globe/" class="bento-item">Connect2Globe</a>
-                    <a href="https://justice-landing-page0.netlify.app" class="bento-item">Justice Legal</a>
-                    <a href="https://mdyasinahmed.github.io/web.Bitcoin" class="bento-item">CryptoTech</a>
-                    <a href="https://mdyasinahmed.github.io/web.enforex-ielts" class="bento-item">EnforexIELTS</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center animate-on-scroll">
-                    <h2 class="section-label text-primary-accent">03. Get In Touch</h2>
-                    <h3 class="display-5 fw-bold text-white mb-4">Let’s build something together.</h3>
-                    <p class="text-secondary-text mb-5">Currently looking for new opportunities and research collaborations. My inbox is always open.</p>
-                    <a href="mailto:mdyasinmahii@gmail.com" class="btn btn-primary-custom px-5 py-3">Say Hello</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Redesigned Footer -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <a class="footer-brand fw-800" href="#">YASIN AHMED</a>
-                    <p class="text-secondary-text mt-3 pe-lg-5">
-                        Designing and coding with precision. Specialized in Machine Learning and Modern Web Infrastructure.
-                    </p>
-                    <div class="footer-socials mt-4">
-                        <a href="https://linkedin.com/in/mdyasiin/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/mdyasinahmed/"><i class="fa-brands fa-github"></i></a>
-                        <a href="mailto:mdyasinmahii@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h6 class="footer-heading">SITEMAP</h6>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Work</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h6 class="footer-heading">RESEARCH</h6>
-                    <ul class="footer-links">
-                        <li><a href="#publications">Publications</a></li>
-                        <li><a href="#">Data Lab</a></li>
-                        <li><a href="#">Thesis</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h6 class="footer-heading">LOCATION</h6>
-                    <p class="text-secondary-text small">
-                        Metropolitan University<br>
-                        Sylhet, Bangladesh
-                    </p>
-                </div>
-            </div>
-            <div class="footer-bottom mt-5 pt-4 border-top border-secondary-subtle">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="small text-muted mb-0">&copy; 2025 Md Yasin Ahmed. Built with Passion.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <p class="small text-muted mb-0">Designed for Data Science & Excellence.</p>
-                    </div>
-                </div>
-            </div>
+            <p class="copyright">Copyright © 2025 All rights reserved | This template is made with Yasin Ahmed</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
