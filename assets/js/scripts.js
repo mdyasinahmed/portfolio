@@ -1,28 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Smooth Reveal Animation with Typography Focus
+    // 1. Scroll Reveal Animation
+    const observerOptions = {
+        threshold: 0.1
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+                entry.target.classList.add("active");
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll(".reveal").forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
-        el.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
-        observer.observe(el);
-    });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    // Handle the Filter Bar Link State
-    const filterLinks = document.querySelectorAll(".filter-link");
-    filterLinks.forEach(link => {
-        link.addEventListener("click", function() {
-            filterLinks.forEach(l => l.style.borderBottom = "none");
-            this.style.borderBottom = "2px solid white";
+    // 2. Simple Category Filter Logic
+    const filters = document.querySelectorAll(".filter-link");
+    const projects = document.querySelectorAll(".project-item");
+
+    filters.forEach(filter => {
+        filter.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            // Toggle active class
+            filters.forEach(f => f.classList.remove("active"));
+            filter.classList.add("active");
+
+            const category = filter.getAttribute("data-filter");
+
+            projects.forEach(project => {
+                if (category === "all" || project.classList.contains(category)) {
+                    project.style.display = "block";
+                    setTimeout(() => project.style.opacity = "1", 10);
+                } else {
+                    project.style.opacity = "0";
+                    setTimeout(() => project.style.display = "none", 400);
+                }
+            });
         });
     });
 });
