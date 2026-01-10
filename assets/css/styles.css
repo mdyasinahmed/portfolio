@@ -1,82 +1,114 @@
 :root {
-    --std-blue: #004aad; /* Standard Professional Blue */
-    --accent-red: #ff4d4d; /* The red dot from the image */
-    --text-dark: #1a1a1a;
-    --text-muted: #666666;
+    --std-blue: #004aad;
+    --accent-red: #ff4d4d;
+    --text-dark: #1a1a1a;   /* Professional Charcoal, not pure black */
+    --text-muted: #666666;  /* Soft grey for subtitles */
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif; /* Clean professional body font */
     background-color: #ffffff;
     color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7; /* Airy leading for elegance */
 }
 
-.section-spacing { padding: 100px 0; }
-
-/* --- Separators --- */
-.separator, .separator-left { display: flex; align-items: center; gap: 10px; margin: 20px 0; }
-.separator { justify-content: center; }
-.line { width: 60px; height: 1px; background-color: var(--accent-red); }
-.dot { width: 8px; height: 8px; background-color: var(--accent-red); border-radius: 50%; }
-
-/* --- Filter Bar (Layout exactly like image) --- */
-.filter-wrapper { position: relative; max-width: 900px; margin: 0 auto; }
-.filter-bar {
-    background-color: var(--std-blue);
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    position: relative;
-    z-index: 2;
+/* --- Main Name Typography --- */
+.main-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
+    letter-spacing: -1.5px; /* Tight tracking for bold headers */
+    color: var(--text-dark);
+    margin-top: 50px;
 }
-.filter-shadow {
-    position: absolute;
-    bottom: -8px; left: 10px; right: 10px;
-    height: 100%;
-    background-color: #e6f0ff; /* Light blue shadow offset */
-    z-index: 1;
+
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 650px;
+    letter-spacing: 0.2px;
 }
+
+/* --- Filter Bar Typography --- */
 .filter-link {
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     color: #ffffff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 0.75rem; /* Small but bold is very trendy */
+    font-weight: 800;
+    letter-spacing: 1.5px; /* Wide tracking for all-caps links */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
-.filter-link.active { border-bottom: 2px solid white; }
 
-/* --- Grid & Hover --- */
-.project-box { position: relative; overflow: hidden; background: #000; }
-.project-box img { width: 100%; height: auto; transition: 0.5s; }
-.project-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 74, 173, 0.85); /* Standard blue overlay */
+/* --- About Section Typography --- */
+.about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+}
+
+.about-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+/* --- Project Overlay Typography --- */
+.overlay-text h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.overlay-text p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* --- Footer Typography --- */
+.footer-section h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Corrected Dot Separator Layout */
+.separator {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: 0.4s;
-    color: white;
-    text-align: center;
+    gap: 15px; /* More space between line and dot */
+    margin: 30px 0;
 }
-.project-box:hover .project-overlay { opacity: 1; }
-.project-box:hover img { transform: scale(1.1); opacity: 0.4; }
 
-/* --- About & Footer --- */
-.grayscale { filter: grayscale(100%); transition: 0.5s; }
-.grayscale:hover { filter: grayscale(0%); }
-.blue-footer { background-color: var(--std-blue); }
-.footer-socials a { color: white; font-size: 18px; margin: 0 12px; }
-
-/* --- Animations --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+.separator .line {
+    width: 50px;
+    height: 1.5px; /* Slightly thicker for premium feel */
+    background-color: var(--accent-red);
 }
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+
+.separator .dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
 }
