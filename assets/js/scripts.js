@@ -1,37 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Precise Navbar Scroll Management
-    const nav = document.querySelector('#mainNav');
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
+    
+    // 1. Scroll-Triggered Animation (Reveal Effect)
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+        
+        revealElements.forEach(el => {
+            const elTop = el.getBoundingClientRect().top;
+            if (elTop < triggerBottom) {
+                el.classList.add("active");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Trigger once on load
+
+    // 2. Navbar Background Change on Scroll
+    const nav = document.querySelector("#mainNav");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+            nav.classList.add("scrolled");
         } else {
-            nav.classList.remove('scrolled');
+            nav.classList.remove("scrolled");
         }
-    };
-    window.addEventListener('scroll', handleScroll);
+    });
 
-    // 2. High-Performance Intersection Observer
-    const observeElements = () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-    };
-    observeElements();
-
-    // 3. Mobile Navigation Auto-Collapse
-    const navItems = document.querySelectorAll('.nav-link, .btn');
-    const navCollapse = document.querySelector('.navbar-collapse');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            if (window.innerWidth < 992) {
-                const bsCollapse = new bootstrap.Collapse(navCollapse);
-                bsCollapse.hide();
+    // 3. Smooth Scroll to Sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
             }
         });
     });
