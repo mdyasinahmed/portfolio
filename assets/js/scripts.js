@@ -1,47 +1,43 @@
-// Navbar scroll effect
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 40) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Scroll Reveal Animation
+    const observerOptions = {
+        threshold: 0.1
+    };
 
-// Scrollspy for active nav links
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
-  window.addEventListener("scroll", function () {
-    let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
-  });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, observerOptions);
 
-  // Animation on scroll
-  const animatedEls = document.querySelectorAll(".animate-on-scroll");
-  const animateOnScroll = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animated");
-        observer.unobserve(entry.target);
-      }
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // 2. Simple Category Filter Logic
+    const filters = document.querySelectorAll(".filter-link");
+    const projects = document.querySelectorAll(".project-item");
+
+    filters.forEach(filter => {
+        filter.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            // Toggle active class
+            filters.forEach(f => f.classList.remove("active"));
+            filter.classList.add("active");
+
+            const category = filter.getAttribute("data-filter");
+
+            projects.forEach(project => {
+                if (category === "all" || project.classList.contains(category)) {
+                    project.style.display = "block";
+                    setTimeout(() => project.style.opacity = "1", 10);
+                } else {
+                    project.style.opacity = "0";
+                    setTimeout(() => project.style.display = "none", 400);
+                }
+            });
+        });
     });
-  };
-  const observer = new IntersectionObserver(animateOnScroll, {
-    threshold: 0.15,
-  });
-  animatedEls.forEach((el) => {
-    observer.observe(el);
-  });
 });
