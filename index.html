@@ -1,124 +1,370 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Md Yasin Ahmed | Portfolio</title>
-    <!-- Fonts -->
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Yasin Ahmed | Portfolio</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --cool-white: #FAFAFA;
+            --deep-charcoal: #1A1A1A; /* Primary Titles */
+            --coffee-black: #3D3D3D;  /* Body Text */
+            --soft-gray: #757575;     /* Meta Text */
+            --border-color: #EAEAEA;
+            --accent-color: #2D3436;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cool-white);
+            color: var(--coffee-black);
+            line-height: 1.7;
+            letter-spacing: -0.01em;
+        }
+
+        /* Container adjustment for resume-style layout */
+        .main-wrapper {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Styling */
+        header {
+            padding: 80px 0 50px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .name-heading {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--deep-charcoal);
+            margin-bottom: 10px;
+        }
+
+        .sub-heading {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--soft-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-top: 80px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--deep-charcoal);
+            margin: 0;
+        }
+
+        .section-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        /* Professional Card Effect */
+        .project-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            border-color: var(--deep-charcoal);
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--deep-charcoal);
+            display: block;
+        }
+
+        /* Typography details */
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--deep-charcoal);
+            margin-bottom: 15px;
+        }
+
+        .text-muted-custom {
+            color: var(--soft-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Tech Tags Minimal */
+        .tech-pill {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--soft-gray);
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-right: 6px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover .tech-pill {
+            border-color: var(--deep-charcoal);
+            color: var(--deep-charcoal);
+        }
+
+        /* Web Links Grid */
+        .web-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .web-link-item {
+            padding: 15px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--coffee-black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+
+        .web-link-item:hover {
+            border-color: var(--deep-charcoal);
+            color: var(--deep-charcoal);
+            padding-left: 20px;
+        }
+
+        /* Social Links */
+        .social-link {
+            color: var(--deep-charcoal);
+            font-size: 1.2rem;
+            margin-right: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--soft-gray);
+        }
+
+        /* Timeline for Research */
+        .research-item {
+            padding-left: 30px;
+            border-left: 1px solid var(--deep-charcoal);
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .research-item::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 9px;
+            height: 9px;
+            background: var(--deep-charcoal);
+            border-radius: 50%;
+        }
+
+        footer {
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .name-heading { font-size: 2.5rem; }
+            .project-card { padding: 25px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Simple Nav -->
-    <nav class="navbar navbar-expand-lg py-4">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="logo.png" alt="YA" style="height: 35px; filter: brightness(0) saturate(100%) invert(26%) sepia(89%) border(43%) hue-rotate(204deg) brightness(93%) contrast(101%);"></a>
-            <div class="ms-auto d-flex gap-4">
-                <a href="#about" class="nav-top-link">About</a>
-                <a href="#contact" class="nav-top-link">Contact</a>
+    <div class="main-wrapper">
+        
+        <!-- Header Section -->
+        <header>
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p class="sub-heading">Computer Science & Engineering</p>
+                    <h1 class="name-heading">Md. Yasin Ahmed</h1>
+                    <p class="fs-5 mt-3" style="max-width: 600px; color: var(--coffee-black);">
+                        Aspiring Data Scientist & Application Developer. Transforming complex data research into functional, human-centric tools.
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <a href="mailto:mdyasinmahii@gmail.com" class="btn btn-outline-dark rounded-0 px-4 py-2 fw-bold">Get In Touch</a>
+                </div>
+            </div>
+            
+            <div class="mt-5 d-flex gap-4">
+                <a href="https://github.com/mdyasinahmed" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mdyasiin/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://medium.com/@md_yasinahmed" class="social-link"><i class="fab fa-medium"></i></a>
+            </div>
+        </header>
+
+        <!-- About Summary -->
+        <div class="section-header">
+            <h2>01. Background</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <p class="fs-5">I believe the most meaningful technologies are born when <strong>empathy meets logic</strong>. Currently, I am focused on academic research and data-driven problem solving, combining technical depth with a commitment to continuous learning.</p>
             </div>
         </div>
-    </nav>
 
-    <!-- Centered Hero -->
-    <header class="container text-center section-spacing reveal">
-        <h1 class="main-name">Md Yasin Ahmed</h1>
-        <div class="separator">
-            <div class="line"></div>
-            <div class="dot"></div>
-            <div class="line"></div>
+        <!-- Research Section -->
+        <div class="section-header">
+            <h2>02. Academic Research</h2>
+            <div class="section-line"></div>
         </div>
-        <p class="hero-subtitle mx-auto">
-            Hello! Glad to see you here. This is a collection of my professional projects <br class="d-none d-md-block"> 
-            focused on Data Science, Machine Learning, and Full-Stack Development.
-        </p>
-    </header>
-
-    <!-- Standard Blue Filter Bar -->
-    <div class="container mb-5 reveal">
-        <div class="filter-wrapper">
-            <div class="filter-bar">
-                <a href="#" class="filter-link active" data-filter="all">ALL CATEGORIES</a>
-                <a href="#" class="filter-link" data-filter="ds">DATA SCIENCE</a>
-                <a href="#" class="filter-link" data-filter="web">WEB DEVELOPMENT</a>
-                <a href="#" class="filter-link" data-filter="research">RESEARCH</a>
+        <div class="research-container">
+            <!-- Research Item 1 -->
+            <div class="research-item">
+                <span class="text-muted-custom font-monospace fw-bold">CSE 422 – Artificial Intelligence Lab</span>
+                <h3 class="mt-2">NLP: Improving Sentiment Analysis via Refined Negation Handling</h3>
+                <p>Identified logical flaws in AFINN dictionary-based scoring and redesigned a scope-controlled tokenizer. Enhanced system accuracy for mixed and ambiguous sentences.</p>
+                <div>
+                    <span class="tech-pill">Python</span><span class="tech-pill">NLP</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">CNN</span>
+                </div>
             </div>
-            <div class="filter-shadow"></div>
+            <!-- Research Item 2 -->
+            <div class="research-item">
+                <span class="text-muted-custom font-monospace fw-bold">CSE 472 - Machine Learning Lab</span>
+                <h3 class="mt-2">Survival Prediction for Post-HCT Patients</h3>
+                <p>Developed an equitable machine learning pipeline for CIBMTR medical data. Integrated 59 clinical variables to ensure fairness and transparency in survival outcomes.</p>
+                <div>
+                    <span class="tech-pill">Machine Learning</span><span class="tech-pill">Survival Analysis</span><span class="tech-pill">Pandas</span>
+                </div>
+            </div>
         </div>
+
+        <!-- Featured Projects -->
+        <div class="section-header">
+            <h2>03. Featured Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="project-card">
+                    <i class="fa-solid fa-bus card-icon"></i>
+                    <h3>MU-BUS Application</h3>
+                    <p class="text-muted-custom">A university bus route management system. Developed with Flutter and a custom-built REST API using PHP & MySQL.</p>
+                    <div>
+                        <span class="tech-pill">Flutter</span><span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="project-card">
+                    <i class="fa-solid fa-droplet card-icon"></i>
+                    <h3>LifeDrops System</h3>
+                    <p class="text-muted-custom">A blood donation management platform connecting recipients and donors in real-time based on group and location.</p>
+                    <div>
+                        <span class="tech-pill">PHP</span><span class="tech-pill">Bootstrap</span><span class="tech-pill">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Deployments -->
+        <div class="section-header">
+            <h2>04. Web Deployments</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="web-links-grid">
+            <a href="https://www.leap2learnglobal.com" target="_blank" class="web-link-item">Leap2Learn Global <i class="fa-solid fa-arrow-right-long small"></i></a>
+            <a href="https://justice-landing-page0.netlify.app" target="_blank" class="web-link-item">Justice Legal <i class="fa-solid fa-arrow-right-long small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.enforex-ielts" target="_blank" class="web-link-item">Enforex IELTS <i class="fa-solid fa-arrow-right-long small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.TuraCos" target="_blank" class="web-link-item">TuraCos Agency <i class="fa-solid fa-arrow-right-long small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.agency-G3-Architects" target="_blank" class="web-link-item">G3 Architects <i class="fa-solid fa-arrow-right-long small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.MultiKart" target="_blank" class="web-link-item">MultiKart Landing <i class="fa-solid fa-arrow-right-long small"></i></a>
+        </div>
+
+        <!-- Skills Matrix -->
+        <div class="section-header">
+            <h2>05. Technical Expertise</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-3"><i class="fa-solid fa-terminal me-2"></i> Programming</h6>
+                <p class="text-muted-custom">Python, JavaScript, C++, Dart, PHP, Java</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-3"><i class="fa-solid fa-chart-line me-2"></i> Data Science</h6>
+                <p class="text-muted-custom">Pandas, Scikit-learn, Matplotlib, NLP, Preprocessing</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-3"><i class="fa-solid fa-layer-group me-2"></i> Development</h6>
+                <p class="text-muted-custom">Flutter, MySQL, Git, Figma, Bootstrap</p>
+            </div>
+        </div>
+
+        <!-- Blog Highlights -->
+        <div class="section-header">
+            <h2>06. Insights & Writing</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="list-group list-group-flush">
+                    <a href="https://medium.com/@md_yasinahmed" class="list-group-item bg-transparent px-0 border-0 py-3 d-flex align-items-center">
+                        <i class="fa-brands fa-medium me-3 fs-4"></i>
+                        <span>What Happens If You Don’t Set Tasks Before Sleep?</span>
+                    </a>
+                    <a href="https://www.linkedin.com/pulse/why-i-chose-computer-science-engineering-journey-passion-mahi-2eu2f" class="list-group-item bg-transparent px-0 border-0 py-3 d-flex align-items-center">
+                        <i class="fa-brands fa-linkedin-in me-3 fs-4"></i>
+                        <span>Why I Chose Computer Science and Engineering</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p class="mb-4" style="color: var(--soft-gray); font-style: italic;">“Technology is most powerful when empathy meets logic.”</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://github.com/mdyasinahmed" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mdyasiin/" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="mt-4 small text-uppercase fw-bold" style="letter-spacing: 2px; font-size: 0.65rem;">&copy; 2024 Md. Yasin Ahmed. Designed for Impact.</p>
+        </footer>
+
     </div>
 
-    <!-- Project Masonry Grid -->
-    <div class="container-fluid px-md-5">
-        <div class="row g-2" id="project-grid">
-            <div class="col-6 col-md-3 project-item ds reveal">
-                <div class="project-box">
-                    <img src="project1.jpg" alt="Data Project">
-                    <div class="project-overlay">
-                        <div class="overlay-text">
-                            <h6>Predictive Model</h6>
-                            <p>(Python & R, 2024)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 project-item web reveal">
-                <div class="project-box">
-                    <img src="project2.jpg" alt="Web Project">
-                    <div class="project-overlay">
-                        <div class="overlay-text">
-                            <h6>LifeDrops</h6>
-                            <p>(PHP & MySQL, 2024)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Duplicate/Add more projects to fill the grid like the image -->
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="section-spacing">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-md-5 reveal">
-                    <div class="about-img-container">
-                        <img src="profile.jpg" class="img-fluid grayscale" alt="Profile">
-                    </div>
-                </div>
-                <div class="col-md-7 reveal">
-                    <h2 class="about-title">About Me</h2>
-                    <div class="separator-left">
-                        <div class="line"></div>
-                        <div class="dot"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="about-text mt-4">
-                        <p>I am a Data Scientist and Full-Stack Developer. I specialize in building intelligent systems that solve real-world problems through data-driven research and clean engineering.</p>
-                        <p>Besides programming, I am passionate about academic research and productivity. I thrive at the intersection of complex algorithms and user-centric design.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Standard Blue Footer -->
-    <footer class="blue-footer text-center">
-        <div class="container py-5">
-            <h5 class="fw-bold text-white mb-4">Work With Me</h5>
-            <div class="footer-socials mb-4">
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-medium-m"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <p class="copyright text-white opacity-75">Copyright © 2025 | Md Yasin Ahmed</p>
-        </div>
-    </footer>
-
-    <script src="assets/js/scripts.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
