@@ -13,11 +13,12 @@
     
     <style>
         :root {
-            --cool-white: #FAFAFA;
-            --deep-charcoal: #1A1A1A; 
-            --coffee-black: #3D3D3D;  
-            --soft-gray: #757575;     
-            --border-color: #EAEAEA;
+            --cool-white: #f8f9fa;
+            --deep-charcoal: #121212; 
+            --coffee-black: #2d3436;  
+            --soft-gray: #636e72;     
+            --border-color: rgba(0, 0, 0, 0.05);
+            --glossy-bg: rgba(255, 255, 255, 0.7);
         }
 
         body {
@@ -26,364 +27,370 @@
             color: var(--coffee-black);
             line-height: 1.7;
             letter-spacing: -0.01em;
+            scroll-behavior: smooth;
         }
 
-        .main-wrapper {
-            max-width: 940px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            padding: 80px 0 50px;
+        /* Sticky Navigation */
+        .navbar {
+            background: var(--glossy-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            transition: 0.3s;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--deep-charcoal) !important;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--soft-gray) !important;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--deep-charcoal) !important;
+        }
+
+        /* Hero Section with Scroll Hint */
+        header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding: 100px 0;
         }
 
         .name-heading {
-            font-size: 3.2rem;
-            font-weight: 700;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
             color: var(--deep-charcoal);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .sub-heading {
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 600;
             color: var(--soft-gray);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: bounce 2s infinite;
+            color: var(--soft-gray);
+            font-size: 0.8rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+
+        .main-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Headings */
         .section-header {
-            margin-top: 80px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            margin-top: 120px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.9rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--deep-charcoal);
-            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .section-line {
+        .section-header h2::after {
+            content: "";
             flex-grow: 1;
             height: 1px;
-            background-color: var(--border-color);
+            background: var(--border-color);
         }
 
-        /* Research Timeline Style */
+        /* Glossy Card Design */
+        .glossy-card {
+            background: var(--glossy-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 40px;
+            border-radius: 12px;
+            height: 100%;
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .glossy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            background: #ffffff;
+            border-color: var(--deep-charcoal);
+        }
+
+        /* Research Item Timeline */
         .research-item {
             padding-left: 30px;
-            border-left: 1px solid var(--deep-charcoal);
+            border-left: 2px solid var(--deep-charcoal);
             position: relative;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .research-item::before {
             content: "";
             position: absolute;
-            left: -5px;
+            left: -9px;
             top: 0;
-            width: 9px;
-            height: 9px;
-            background: var(--deep-charcoal);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid var(--deep-charcoal);
             border-radius: 50%;
-        }
-
-        /* Project Card Styling */
-        .project-card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            padding: 35px;
-            border-radius: 4px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            border-color: var(--deep-charcoal);
-        }
-
-        .card-icon {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--deep-charcoal);
-            display: block;
         }
 
         .tech-pill {
             display: inline-block;
             font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--soft-gray);
-            border: 1px solid var(--border-color);
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-right: 6px;
-            margin-top: 10px;
-        }
-
-        .contribution-list {
-            padding-left: 18px;
-            font-size: 0.9rem;
+            font-weight: 700;
             color: var(--coffee-black);
-            margin-top: 10px;
+            background: rgba(0,0,0,0.04);
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-right: 8px;
+            margin-top: 12px;
+            border: 1px solid transparent;
         }
 
-        .web-links-grid {
+        .glossy-card:hover .tech-pill {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Web Links Grid */
+        .web-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
         }
 
         .web-link-item {
-            padding: 15px;
+            padding: 20px;
             background: #fff;
             border: 1px solid var(--border-color);
+            border-radius: 8px;
             text-decoration: none;
             color: var(--coffee-black);
-            font-size: 0.9rem;
-            transition: 0.3s;
+            font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: 0.3s;
         }
 
         .web-link-item:hover {
-            border-color: var(--deep-charcoal);
-            padding-left: 20px;
-        }
-
-        .social-link {
-            color: var(--deep-charcoal);
-            font-size: 1.2rem;
-            margin-right: 25px;
-            text-decoration: none;
+            background: var(--deep-charcoal);
+            color: #fff;
+            transform: scale(1.02);
         }
 
         footer {
-            padding: 100px 0 50px;
+            padding: 120px 0 60px;
             text-align: center;
+            border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 768px) {
-            .name-heading { font-size: 2.5rem; }
+            .navbar-nav { background: #fff; padding: 20px; border-radius: 10px; margin-top: 10px; }
+            header { padding: 60px 0; min-height: auto; }
         }
     </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
 
-    <div class="main-wrapper">
-        
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">YASIN AHMED</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Expertise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blogs">Writing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-wrapper" id="home">
         <!-- Header Section -->
         <header>
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <p class="sub-heading">Computer Science & Engineering Undergraduate</p>
-                    <h1 class="name-heading">MD. YASIN AHMED</h1>
-                    <p class="fs-5 mt-3" style="max-width: 700px; color: var(--coffee-black);">
-                        Driven by a deep curiosity to explore how technology can solve real-world problems. Specialized in <strong>Data Science, Machine Learning, and Intelligent Automation</strong>.
-                    </p>
-                </div>
-                <div class="col-md-4 text-md-end mt-4 mt-md-0">
-                    <a href="mailto:mdyasinmahii@gmail.com" class="btn btn-outline-dark rounded-0 px-4 py-2 fw-bold">Get In Touch</a>
+            <p class="sub-heading">CSE Undergraduate | Data Scientist Aspirant</p>
+            <h1 class="name-heading">TRANSFORMING DATA <br> INTO INSIGHTS.</h1>
+            <p class="fs-5 mt-2 mb-5" style="max-width: 650px; color: var(--soft-gray);">
+                Hello, I'm Yasin. I build intelligent applications and conduct data-driven research to solve complex real-world problems.
+            </p>
+            <div class="d-flex gap-4">
+                <a href="mailto:mdyasinmahii@gmail.com" class="btn btn-dark rounded-pill px-4 py-2 fw-bold">Hire Me</a>
+                <div class="d-flex align-items-center gap-3 ms-2">
+                    <a href="https://github.com/mdyasinahmed" class="text-dark fs-5"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mdyasiin/" class="text-dark fs-5"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            
-            <div class="mt-5 d-flex gap-2">
-                <a href="https://github.com/mdyasinahmed" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mdyasiin/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@md_yasinahmed" class="social-link"><i class="fab fa-medium"></i></a>
+            <div class="scroll-hint">
+                <p class="mb-1">Scroll</p>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
         </header>
 
-        <!-- About/Focus Section -->
+        <!-- Focus Section -->
         <div class="section-header">
             <h2>01. Background & Focus</h2>
-            <div class="section-line"></div>
         </div>
-        <div class="row">
+        <div class="row g-4">
             <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li><i class="fa-solid fa-caret-right me-2"></i> Data-driven research & intelligent automation</li>
-                    <li><i class="fa-solid fa-caret-right me-2"></i> Transforming research insights into tools</li>
-                </ul>
+                <div class="glossy-card">
+                    <h4 class="fw-bold mb-3">Academic Research</h4>
+                    <p class="text-muted small">Deeply involved in NLP and Machine Learning labs, focusing on data-driven research and automation.</p>
+                </div>
             </div>
             <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li><i class="fa-solid fa-caret-right me-2"></i> Real-world problem solving through apps</li>
-                    <li><i class="fa-solid fa-caret-right me-2"></i> Academic collaboration & continuous learning</li>
-                </ul>
-            </div>
-            <div class="col-12 mt-3">
-                <p>To me, great technology bridges logic with empathy and I strive to build solutions that truly make a difference.</p>
+                <div class="glossy-card">
+                    <h4 class="fw-bold mb-3">Application Development</h4>
+                    <p class="text-muted small">Transforming research insights into functional tools through Flutter mobile apps and responsive web solutions.</p>
+                </div>
             </div>
         </div>
 
         <!-- Research Section -->
-        <div class="section-header">
-            <h2>02. Undergraduate Research</h2>
-            <div class="section-line"></div>
+        <div class="section-header" id="research">
+            <h2>02. Academic Research</h2>
         </div>
         <div class="research-container">
-            <!-- Research 1 -->
             <div class="research-item">
                 <span class="text-muted small font-monospace fw-bold">CSE 422 – Artificial Intelligence Lab</span>
-                <h3 class="mt-2 h4 fw-bold">Refining Sentiment Analysis & Negation Handling</h3>
-                <p class="mt-2 text-muted">Tackled lexicon-based analysis limitations in the AFINN dictionary by introducing a scope-controlled negation handler and improved tokenization.</p>
+                <h3 class="mt-2 fw-bold h4">Improving Sentiment Analysis via Negation Handling</h3>
+                <p class="mt-3">Redesigned AFINN-based scoring and tokenization to handle complex negations. Significantly enhanced sentiment accuracy for mixed sentences.</p>
+                <ul class="small mt-3 list-unstyled">
+                    <li><i class="fa-solid fa-circle-check me-2"></i> Redesigned tokenizer for dynamic negations</li>
+                    <li><i class="fa-solid fa-circle-check me-2"></i> Proposed hybrid ML–NLP model architecture</li>
+                </ul>
                 <div class="mt-3">
-                    <p class="mb-1 small fw-bold text-uppercase">Key Contributions:</p>
-                    <ul class="contribution-list">
-                        <li>Identified logical flaws in existing dictionary-based scoring</li>
-                        <li>Redesigned tokenizer to handle negations dynamically</li>
-                        <li>Developed improved sentiment scoring logic using JavaScript</li>
-                        <li>Proposed hybrid ML-NLP model integration</li>
-                    </ul>
-                </div>
-                <p class="small mt-2"><strong>Outcome:</strong> Enhanced accuracy on real-world data; groundwork for contextual learning models.</p>
-                <div class="mt-2">
-                    <span class="tech-pill">Python</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">Pandas</span><span class="tech-pill">NLP</span><span class="tech-pill">CNN</span>
+                    <span class="tech-pill">Python</span><span class="tech-pill">NLP</span><span class="tech-pill">CNN</span><span class="tech-pill">JavaScript</span>
                 </div>
             </div>
 
-            <!-- Research 2 -->
             <div class="research-item">
-                <span class="text-muted small font-monospace fw-bold">CSE 472 - Machine Learning Lab | Dataset: CIBMTR</span>
-                <h3 class="mt-2 h4 fw-bold">Survival Prediction for Post-HCT Patients</h3>
-                <p class="mt-2 text-muted">Focused on equitable survival prediction for transplant patients using ML, integrating both clinical and demographic variables for fairness.</p>
+                <span class="text-muted small font-monospace fw-bold">CSE 472 - Machine Learning Lab</span>
+                <h3 class="mt-2 fw-bold h4">Survival Prediction for Post-HCT Patients</h3>
+                <p class="mt-3">A study on equitable medical outcomes using machine learning models (Random Forest, SVM) integrated with clinical variables from CIBMTR.</p>
+                <ul class="small mt-3 list-unstyled">
+                    <li><i class="fa-solid fa-circle-check me-2"></i> Feature analysis across 59 variables</li>
+                    <li><i class="fa-solid fa-circle-check me-2"></i> Fairness-aware prediction interpreting clinical significance</li>
+                </ul>
                 <div class="mt-3">
-                    <p class="mb-1 small fw-bold text-uppercase">Key Contributions:</p>
-                    <ul class="contribution-list">
-                        <li>Designed ML pipeline for equitable survival prediction</li>
-                        <li>Conducted feature analysis across 59 clinical variables</li>
-                        <li>Implemented Logistic Regression, Random Forest, and SVM models</li>
-                    </ul>
-                </div>
-                <p class="small mt-2"><strong>Outcome:</strong> Delivered an interpretable model supporting unbiased medical decision-making.</p>
-                <div class="mt-2">
-                    <span class="tech-pill">Python</span><span class="tech-pill">Matplotlib</span><span class="tech-pill">Data Preprocessing</span><span class="tech-pill">ML Pipeline</span>
+                    <span class="tech-pill">Machine Learning</span><span class="tech-pill">Pandas</span><span class="tech-pill">Survival Analysis</span>
                 </div>
             </div>
         </div>
 
         <!-- Featured Projects -->
-        <div class="section-header">
-            <h2>03. Featured Academic Projects</h2>
-            <div class="section-line"></div>
+        <div class="section-header" id="projects">
+            <h2>03. Featured Projects</h2>
         </div>
         <div class="row g-4">
-            <!-- MU BUS -->
             <div class="col-md-6">
-                <div class="project-card">
-                    <i class="fa-solid fa-bus card-icon"></i>
-                    <h3 class="h5 fw-bold">MU-BUS System</h3>
-                    <p class="text-muted small">Real-time university bus schedule and route management system for students and staff.</p>
-                    <ul class="contribution-list">
-                        <li>Developed Flutter Mobile Application</li>
-                        <li>Built backend using PHP and MySQL</li>
-                        <li>Created REST APIs for synchronization</li>
-                    </ul>
+                <div class="glossy-card">
+                    <i class="fa-solid fa-bus-simple fs-3 mb-3"></i>
+                    <h3 class="h5 fw-bold">MU-BUS Application</h3>
+                    <p class="text-muted small">Full-scale university bus schedule system. Built with Flutter and a custom PHP/MySQL REST API.</p>
                     <div class="mt-3">
-                        <span class="tech-pill">Flutter</span><span class="tech-pill">PHP</span><span class="tech-pill">REST API</span>
+                        <span class="tech-pill">Flutter</span><span class="tech-pill">REST API</span><span class="tech-pill">MySQL</span>
                     </div>
                 </div>
             </div>
-            <!-- LifeDrops -->
             <div class="col-md-6">
-                <div class="project-card">
-                    <i class="fa-solid fa-droplet card-icon"></i>
-                    <h3 class="h5 fw-bold">LifeDrops</h3>
+                <div class="glossy-card">
+                    <i class="fa-solid fa-heart-pulse fs-3 mb-3"></i>
+                    <h3 class="h5 fw-bold">LifeDrops Blood System</h3>
                     <p class="text-muted small">Blood donation management system connecting donors and recipients based on location.</p>
-                    <ul class="contribution-list">
-                        <li>Developed backend & database architecture</li>
-                        <li>Implemented search and registration modules</li>
-                        <li>Refined UI using Bootstrap</li>
-                    </ul>
                     <div class="mt-3">
                         <span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span><span class="tech-pill">Bootstrap</span>
                     </div>
                 </div>
             </div>
-            <!-- RecordBook -->
-            <div class="col-md-6">
-                <div class="project-card">
-                    <i class="fa-solid fa-book card-icon"></i>
-                    <h3 class="h5 fw-bold">RecordBook</h3>
-                    <p class="text-muted small">Web-based CRUD system for managing library book records with secure query execution.</p>
-                    <ul class="contribution-list">
-                        <li>Built complete CRUD functionality & validation</li>
-                        <li>Designed admin dashboard interface</li>
-                    </ul>
-                    <div class="mt-3">
-                        <span class="tech-pill">DBMS</span><span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            <!-- TODO -->
-            <div class="col-md-6">
-                <div class="project-card">
-                    <i class="fa-solid fa-terminal card-icon"></i>
-                    <h3 class="h5 fw-bold">Dynamic TO-DO List</h3>
-                    <p class="text-muted small">Console-based task manager application performing dynamic CRUD operations.</p>
-                    <ul class="contribution-list">
-                        <li>Developed interactive handling in C++</li>
-                        <li>Implemented file-based data persistence</li>
-                    </ul>
-                    <div class="mt-3">
-                        <span class="tech-pill">C++</span><span class="tech-pill">Data Persistence</span>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Other Deployments -->
+        <!-- Web Deployments -->
         <div class="section-header">
             <h2>04. Web Deployments</h2>
-            <div class="section-line"></div>
         </div>
-        <div class="web-links-grid">
-            <a href="https://www.leap2learnglobal.com" target="_blank" class="web-link-item">Leap2Learn <i class="fa-solid fa-link small"></i></a>
-            <a href="https://justice-landing-page0.netlify.app" target="_blank" class="web-link-item">Justice Legal <i class="fa-solid fa-link small"></i></a>
-            <a href="https://mdyasinahmed.github.io/web.enforex-ielts" target="_blank" class="web-link-item">Enforex IELTS <i class="fa-solid fa-link small"></i></a>
-            <a href="https://mdyasinahmed.github.io/web.TuraCos" target="_blank" class="web-link-item">TuraCos Agency <i class="fa-solid fa-link small"></i></a>
-            <a href="https://mdyasinahmed.github.io/web.agency-G3-Architects" target="_blank" class="web-link-item">G3 Architects <i class="fa-solid fa-link small"></i></a>
-            <a href="https://mdyasinahmed.github.io/web.MultiKart" target="_blank" class="web-link-item">MultiKart Landing <i class="fa-solid fa-link small"></i></a>
-            <a href="https://mdyasinahmed.github.io/web.ittady-gallery" target="_blank" class="web-link-item">Ittady Gallery <i class="fa-solid fa-link small"></i></a>
-            <a href="https://mdyasinahmed.github.io/web.Bitcoin" target="_blank" class="web-link-item">CryptoTech <i class="fa-solid fa-link small"></i></a>
+        <div class="web-grid">
+            <a href="https://www.leap2learnglobal.com" target="_blank" class="web-link-item">Leap2Learn Global <i class="fa-solid fa-arrow-right small"></i></a>
+            <a href="https://justice-landing-page0.netlify.app" target="_blank" class="web-link-item">Justice Legal <i class="fa-solid fa-arrow-right small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.enforex-ielts" target="_blank" class="web-link-item">Enforex IELTS <i class="fa-solid fa-arrow-right small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.TuraCos" target="_blank" class="web-link-item">TuraCos Agency <i class="fa-solid fa-arrow-right small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.agency-G3-Architects" target="_blank" class="web-link-item">G3 Architects <i class="fa-solid fa-arrow-right small"></i></a>
+            <a href="https://mdyasinahmed.github.io/web.MultiKart" target="_blank" class="web-link-item">MultiKart Landing <i class="fa-solid fa-arrow-right small"></i></a>
         </div>
 
         <!-- Skills Matrix -->
-        <div class="section-header">
+        <div class="section-header" id="skills">
             <h2>05. Technical Expertise</h2>
-            <div class="section-line"></div>
         </div>
         <div class="row g-4">
             <div class="col-md-4">
-                <h6 class="fw-bold mb-3"><i class="fa-solid fa-code me-2"></i> Languages</h6>
-                <p class="small text-muted">Python, C++, Java, PHP, JavaScript, Dart, SQL</p>
+                <div class="glossy-card p-3 text-center">
+                    <h6 class="fw-bold mb-1">Languages</h6>
+                    <p class="small text-muted mb-0">Python, PHP, Dart, C++, Java</p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h6 class="fw-bold mb-3"><i class="fa-solid fa-microchip me-2"></i> Data Science</h6>
-                <p class="small text-muted">Pandas, Scikit-learn, NLP, ML Pipeline, Matplotlib</p>
+                <div class="glossy-card p-3 text-center">
+                    <h6 class="fw-bold mb-1">Data Science</h6>
+                    <p class="small text-muted mb-0">Pandas, ML Pipelines, NLP, Matplotlib</p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h6 class="fw-bold mb-3"><i class="fa-solid fa-layer-group me-2"></i> Development</h6>
-                <p class="small text-muted">Flutter, Bootstrap, Git, Figma, MySQL, REST APIs</p>
+                <div class="glossy-card p-3 text-center">
+                    <h6 class="fw-bold mb-1">Frameworks</h6>
+                    <p class="small text-muted mb-0">Flutter, Bootstrap, MySQL, Git</p>
+                </div>
             </div>
         </div>
 
         <!-- Blog Highlights -->
-        <div class="section-header">
+        <div class="section-header" id="blogs">
             <h2>06. Insights & Writing</h2>
-            <div class="section-line"></div>
         </div>
         <div class="row g-3">
             <div class="col-md-6">
@@ -392,27 +399,37 @@
             <div class="col-md-6">
                 <a href="https://www.linkedin.com/pulse/why-i-chose-computer-science-engineering-journey-passion-mahi-2eu2f" class="web-link-item" target="_blank">Why I Chose CSE <i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <div class="col-md-6">
-                <a href="https://medium.com/@md_yasinahmed" class="web-link-item" target="_blank">Organized Presentation <i class="fa-brands fa-medium"></i></a>
-            </div>
-            <div class="col-md-6">
-                <a href="https://medium.com/@md_yasinahmed" class="web-link-item" target="_blank">7 Cs of Communication <i class="fa-brands fa-medium"></i></a>
-            </div>
         </div>
 
         <!-- Footer -->
         <footer>
-            <p class="mb-4" style="color: var(--soft-gray); font-style: italic;">“The most meaningful technologies are born when empathy meets logic.”</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://github.com/mdyasinahmed" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mdyasiin/" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <div class="mb-5">
+                <h3 class="fw-bold">Let's build something meaningful.</h3>
+                <p class="text-muted">Currently open to Data Analytics and ML opportunities.</p>
             </div>
-            <p class="mt-4 small text-uppercase fw-bold" style="letter-spacing: 2px; font-size: 0.65rem;">&copy; 2026 MD. YASIN AHMED. CURATED FOR EXCELLENCE.</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://github.com/mdyasinahmed" class="text-dark fs-4"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mdyasiin/" class="text-dark fs-4"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:mdyasinmahii@gmail.com" class="text-dark fs-4"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="small text-uppercase fw-bold opacity-50" style="letter-spacing: 2px;">&copy; 2024 MD. YASIN AHMED</p>
         </footer>
-
     </div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth transition for navbar on scroll
+        window.onscroll = function() {
+            var nav = document.getElementById('mainNav');
+            if (window.pageYOffset > 50) {
+                nav.style.padding = "10px 0";
+                nav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
+            } else {
+                nav.style.padding = "15px 0";
+                nav.style.boxShadow = "none";
+            }
+        };
+    </script>
 </body>
 </html>
