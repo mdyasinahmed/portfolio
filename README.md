@@ -93,6 +93,18 @@ A **web-based CRUD system** for managing book records in university libraries, d
 
 ---
 
+### 🔗 [Missile Command: Bresenham-Powered Defense System](https://github.com/mdyasinahmed)
+**Course:** *CSE 402 - Computer Graphics and Image Processing Lab*
+A **real-time 2D missile defense game** built with C++ and OpenGL/GLUT, demonstrating core computer graphics algorithms in an interactive, fully playable environment.
+**My Contributions:**
+- Implemented **Bresenham's Line Drawing Algorithm** from scratch for pixel-level missile smoke trail rendering
+- Built a **rotating cannon** with dual mouse and keyboard control, real-time crosshair, and trigonometric projectile motion
+- Designed a **retro military HUD** with live score, hi-score, threat assessment bar, reload status, combo system, and city-life indicators
+- Developed **collision detection** using the Euclidean distance formula and chain-reaction explosion logic
+- Rendered explosion effects using the **Midpoint Circle Algorithm** with particle systems and animated overlays
+
+**🛠 Tech Stack:** C++, OpenGL, GLUT/FreeGLUT
+
 ### 🔗 [Dynamic TO-DO List – Console Application](https://github.com/mdyasinahmed/dynamic-todo-list-with-cpp)
 **Course:** *CSE 422 - Artificial Intelligence Lab*  
 A simple yet effective console-based **task manager application** that performs all CRUD operations dynamically.  
@@ -152,4 +164,3 @@ I occasionally write about **productivity**, **tech insights**, and **personal r
 
 ### 💭 *Final Thought*  
 > *“The most meaningful technologies are born when empathy meets logic - and that’s where I love to innovate.”*
-
